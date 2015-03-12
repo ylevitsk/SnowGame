@@ -1,0 +1,13 @@
+This directory contains code that I did not write myself.
+It was all received via the course webpage for CPE-471.
+
+Original Authors:
+
+Zoe" Wood:         GLSL_Helper.cpp
+"Wyatt and Evan":  MStackHelp.cpp
+Ian Dunn:          GeometryCreator.cpp
+
+I modified the GeometryCreator to work with texture buffer objects,
+but besides that, none of this code is my original work.
+
+- Evan

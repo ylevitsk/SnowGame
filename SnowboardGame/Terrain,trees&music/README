@@ -1,0 +1,5 @@
+music uses irrKlang library.
+
+height map- to put objects on the heights use terrian->get height(x,z) like i did with the trees
+that will put ur object on the same curve but will likely  be below the terrain. depending on the
+size of you object you need to raise the y by ~4

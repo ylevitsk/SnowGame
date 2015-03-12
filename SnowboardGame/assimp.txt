@@ -1,0 +1,70 @@
+Use glm quaternions
+
+glm, quaterions mix
+glm/gcc/quaternion mix
+
+Bone animations
+Don't use rotate or scale
+
+Pre and post- linear and quadratic interpolations
+
+Parse through first node, get mesh out
+Get past root to the first child
+Assimp has a list of bones specified by name
+Each node has a name
+It's a tree
+Specific node that has children
+Or bones could be located off of root node, not off of mesh node
+Parse through list of bones to see if there is a bone with the same name as the bone
+Insert that into your hierarchy
+
+Ai string can be directly compared using ==
+
+Compute transformation at this current node
+
+Base transformation
+Should just be a part of the transformation
+
+Continue down through hierarchy
+Connect your bones to your mesh
+
+Gives you a list of the vertices representing their weight compared to that bone
+Movement of hip has no weight on movement of arm so weight is 0
+Apply that amount of that transformation to that point
+
+Each node has an animation field
+It contains all the keyframe information for that node
+
+Imagining hashtable
+A field of your mesh
+It has the matrix follow by a time stamp, key table by time stamp
+Rather than constantly go through all this to get it
+
+Parsed to the point where you got a mesh which means you got one step into the tree
+Probable you're taken it directly out of the meshes array
+
+Start traversing the tree
+field called mRootNode
+That is where the tree starts
+assign as temp ainode root
+start traversing tree using it as root
+recursive function, pass it a node
+each node has a manimations field
+   array of animations
+   scale, trans, rotate
+mtransformation is base transformation for that node
+   4x4 transformation that that node takes
+mMeshes describes the index of the mesh in the array of meshes
+   mNumMeshes tells you how many meshes are in that node
+   could be 0 in case of bones
+   0th index is index of mesh in array of meshes
+import the mesh
+all the other fields just give you name that you'll have to namecheck against bone's name
+
+rummage through documentation
+several pages not even linked to
+materials are imported with a bunch of keys you have to pass
+   predefined key
+   aiMatKey, etc
+not defined in main page
+assimp material system will give you a better page for reading stuff
